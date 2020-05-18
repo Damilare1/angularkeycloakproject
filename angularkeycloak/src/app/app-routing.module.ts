@@ -1,23 +1,27 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { XyzComponent } from './xyz/xyz.component';
-import { AppComponent } from './app.component';
 
+import { AppAuthGuard } from './app.authguard';
+import { XyzComponent } from './xyz/xyz.component';
+import { FirstpageComponent } from './firstpage/firstpage.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
     path: 'xyz',
-    component: XyzComponent ,
+    canActivate: [AppAuthGuard],
+    component: XyzComponent,
     data: { roles: ['user'] },
   },
   {
     path: '',
-    component: AppComponent,
+    component: FirstpageComponent,
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  providers: [AppAuthGuard],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
