@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppAuthGuard } from './app.authguard';
 import { XyzComponent } from './xyz/xyz.component';
 import { FirstpageComponent } from './firstpage/firstpage.component';
-import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {

@@ -9,7 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { XyzComponent } from './xyz/xyz.component';
 import { FirstpageComponent } from './firstpage/firstpage.component';
+
 const keycloakService = new KeycloakService();
+
 @NgModule({
   declarations: [
     AppComponent,
